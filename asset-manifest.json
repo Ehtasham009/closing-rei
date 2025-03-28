@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/closing-rei/static/css/main.8a5e5cd6.css",
-    "main.js": "/closing-rei/static/js/main.af7d8fec.js",
+    "main.css": "/closing-rei/static/css/main.7ad23525.css",
+    "main.js": "/closing-rei/static/js/main.7d8aae86.js",
     "static/js/206.e0dbdbfb.chunk.js": "/closing-rei/static/js/206.e0dbdbfb.chunk.js",
     "index.html": "/closing-rei/index.html"
   },
   "entrypoints": [
-    "static/css/main.8a5e5cd6.css",
-    "static/js/main.af7d8fec.js"
+    "static/css/main.7ad23525.css",
+    "static/js/main.7d8aae86.js"
   ]
 }

@@ -1,0 +1,151 @@
+/********** Global Classes **********/
+
+
+	@mixin circle($size: 50px) {
+		--size: #{$size}; width: var(--size); height: var(--size); border-radius: var(--size);
+	}
+
+
+	// *{box-sizing: border-box; cursor:none; }
+	main{overflow-x: hidden;}
+
+	.h-list {display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; grid-gap: var(--item-gap);}
+	.icon-rounded{@include circle(30px); flex-shrink: 0; overflow: hidden; display: flex; cursor: pointer; align-items: center; justify-content: center; cursor: pointer;}
+
+	.btn{--item-gap: 30px; --px: var(--item-gap); padding: 3px var(--px); outline: none !important; white-space: nowrap; min-height: var(--button-height); display: inline-flex; justify-content: center; align-items: center; border-radius: var(--default-radius); font-size: 17px; font-weight: 600; cursor: pointer;}
+	.btn-primary{--px: 30px; background: var(--secondary-color); color: #fff; border-radius: 5px; font-family: var(--font-weight-700); position: relative; border: 0; transition: 0.5s all;}
+	.btn-primary:hover{background: var(--secondary-dark); }
+
+	.btn-rounded{border-radius: 100px;}
+
+	.gradient-button{background: linear-gradien t(to right, #3D48EA, #0FB6B5); border: 0;}
+
+	$data-gap-list: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60;
+	@each $item in $data-gap-list {
+		[data-size="#{$item}"]{--size: #{$item}px;}
+		[data-gap="#{$item}"]{--item-gap: #{$item}px;}
+		[data-gap-v="#{$item}"]{row-gap: #{$item}px !important;}
+
+		@if ($item > 15){
+			[data-button-height="#{$item}"]{--button-height: #{$item}px;}
+		}
+
+		.left-#{$item}{left: #{$item}px;}
+		.right-#{$item}{right: #{$item}px;}
+
+		.border-radius-#{$item}{border-radius: #{$item}px;}
+
+		[data-gap-sm="#{$item}"]{--item-gap: #{$item}px;}
+		[data-gap-md="#{$item}"]{--item-gap: #{$item}px;}
+		[data-gap-lg="#{$item}"]{--item-gap: #{$item}px;}
+		[data-gap-xl="#{$item}"]{--item-gap: #{$item}px;}
+	}
+
+	.grid{display: grid; grid-gap: var(--item-gap); grid-template-columns: repeat(auto-fill, minmax(var(--grid-item-width), 1fr));}
+	.auto-fr{display: grid; margin: 0; padding: 0; grid-gap: var(--item-gap); grid-template-columns: auto 1fr; align-items: center;}
+	.fr-auto{display: grid; margin: 0; padding: 0; grid-gap: var(--item-gap); grid-template-columns: 1fr auto; align-items: center;}
+	.fr-fr{display: grid; margin: 0; padding: 0; grid-gap: var(--item-gap); grid-template-columns: 1fr 1fr; align-items: center;}
+	
+	h1, .h1{font-size: 46px; margin: 0;}
+	h2, .h2{font-size: 48px; font-weight: 400; margin: 0;}
+	h3, .h3{font-size: 34px; font-weight: 400; margin: 0;}
+	h4, .h4{font-size: 24px; font-weight: 700; margin: 0;}
+	h5, .h5{font-size: 18px; font-weight: 600; margin: 0;}
+	h6, .h6{ font-size: 14px; font-weight: 700; margin: 0;}
+
+	.font-weight-400{font-weight: 400}
+	.font-weight-600{font-weight: 600}
+	.font-weight-700{font-weight: 700;}
+	.font-size-18{font-size: 18px;}
+	.font-size-20{font-size: 20px;}
+	.cursor-pointer{cursor: pointer;}
+	.truncate{overflow: hidden; text-overflow: ellipsis;}
+	.overflow-visible{overflow: visible;}
+	.rotate-90{transform: rotate(90deg);}
+	.rotate-180{transform: rotate(180deg);}
+	.line-through{text-decoration: line-through;}
+	.align-items-initial{align-items: initial;}
+	.align-items-inherit{align-items: inherit;}
+	.align-items-center{align-items: center;}
+	.align-items-start{align-items: flex-start;}
+	.align-content-center{align-content: center}
+	.align-content-start{align-content: flex-start}
+	.justify-content-between{justify-content: space-between;}
+	.font-style-italic{font-style: italic;}
+	.nowrap{white-space: nowrap;}
+	.f-no-wrap{flex-wrap: nowrap;}
+
+	.position-relative{position: relative;}
+	.width-100{width: 100%;}
+
+	figure{margin: 0;}
+	
+	.description-holder > p{margin: 0; margin-bottom: 10px; line-height: 1.5;}
+	.description-holder > p:last-child{margin-bottom: 0;}
+	.last-margin-0 > *:last-child{margin-bottom: 0 !important;}
+	.text-center{text-align: center;}
+
+	.p-section{padding: 50px 0;}
+
+	.section-title-holder{margin-bottom: 50px;}
+	.section-title{font-size: 34px; text-transform: uppercase; font-weight: 700; display: flex ; flex-wrap: wrap; justify-content: center; text-align: center; grid-gap: 10px;}
+	.section-title > span{background: var(--secondary-color); padding: 2px 15px; color: white; border-radius: 5px;}
+
+	.text-white{color: white;}
+	.text-primary{color: var(--primary-color);}
+	.text-secondary{color: var(--secondary-color) !important;}
+
+	.bg-primary{background: var(--primary-color) !important; }
+	.bg-secondary{background: var(--secondary-color);}
+
+	section{padding: 50px 0;}
+
+	.image-holder{
+		overflow: hidden;
+		img{width: 100%; object-position: center; object-fit: cover; height: 100%;}
+	
+	}
+
+	
+	select.form-control{
+		color: rgba(159 , 159 , 159 , 0.7) !important;
+		option{color: #000;}
+	}
+	textarea.form-control{resize: vertical;}
+	.content-size{font-size: var(--content-size) !important;}
+
+	.body-scroll-hidden{overflow: hidden;}
+
+	a{text-decoration: none;}
+	a:hover{text-decoration: none;}
+
+	@media (min-width: 1380px){
+		.container, .container-sm, .container-md, .container-lg{
+			max-width: 1440px
+		}
+	}
+
+	@media (max-width: 1380px){
+		.container, .container-sm, .container-md, .container-lg{
+			max-width: 100%
+		}
+	}
+
+	/********** Global Classes **********/
+
+
+@media (max-width: 1024px){
+	h1, .h1{font-size: 28px;}
+	.btn-primary{--px: 20px; --button-height: 40px; font-size: 16px; min-height: 45px;}
+	.btn-primary::after{height: 10px; width: 120px;}
+	.section-title{font-size: 24px;}
+}
+@media (max-width: 768px){
+	h1, .h1{font-size: 24px;}
+	.btn-primary{--px: 20px; --button-height: 40px; font-size: 16px; min-height: 45px;}
+	.btn-primary::after{height: 10px; width: 120px;}
+	.section-title{font-size: 20px;}
+}
+
+
+
